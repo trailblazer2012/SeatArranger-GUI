@@ -1,0 +1,23 @@
+﻿<Window x:Class="SeatArr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SeatArr"
+        mc:Ignorable="d"
+        Title="반 구성하기" Height="126" Width="329.6">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="확인" Grid.Column="1" FontSize="20" Grid.Row="0" Grid.RowSpan="2" Click="Button_Click"/>
+        <TextBox FontSize="20" Name="ClassInput" Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" KeyDown="TextBox_KeyDown"/>
+        <CheckBox x:Name="CheckBox_CustomStudent"  Grid.Column="0" Grid.Row="1" FontSize="20" Content="이름/번호 지정하기" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
