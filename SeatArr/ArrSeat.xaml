@@ -14,6 +14,6 @@
 
         <Grid x:Name="ClassRoom" Grid.Row="2" ShowGridLines="True"/>
         <Label Content="칠판" VerticalContentAlignment="Center" FontSize="80" Grid.ColumnSpan="2147483647" Grid.Row="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Background="#FF3D9353"/>
-
+        <Label x:Name="MaskLabel" Content=""  Grid.ColumnSpan="2147483647" Panel.ZIndex="1" Grid.RowSpan="2147483647" Grid.Row="2" Background="#8affa5"/>
     </Grid>
 </Window>

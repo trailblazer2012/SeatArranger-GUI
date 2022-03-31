@@ -24,6 +24,17 @@ namespace SeatArr
         private int row;
         private int column;
         private int StudentsNumber;
+        private bool isMaskVisible;
+
+        public bool IsMaskVisible { get => isMaskVisible;
+            
+            set 
+            { 
+                isMaskVisible = value; 
+                MaskLabel.Visibility = value ? Visibility.Visible : Visibility.Collapsed;
+            } 
+        
+        }
 
         protected override void OnClosed(EventArgs e)
         {
@@ -37,6 +48,7 @@ namespace SeatArr
             ClassSeats = new List<List<int>>();
             ClassMates = new List<Label>();
             StudentsNumber = Sum(ClassInput);
+            IsMaskVisible = false;
             InitStudents();
             InitTable(ClassInput);
             PrintOnScreen();
@@ -48,6 +60,7 @@ namespace SeatArr
             ClassSeats = new List<List<int>>();
             ClassMates = new List<Label>();
             StudentsNumber = Sum(ClassInput);
+            IsMaskVisible = false;
             InitStudents(custom_class);
             InitTable(ClassInput);
             PrintOnScreen();
@@ -180,11 +193,16 @@ namespace SeatArr
                 MessageBox.Show("CTRL + S");
                 return;
             }
-            if (e.Key != Key.Enter && e.Key != Key.Space)
+
+            if (e.Key == Key.H)
             {
-                return;
+                IsMaskVisible = !IsMaskVisible;
             }
-            MixSeat();
+
+            if (e.Key == Key.Enter || e.Key == Key.Space)
+            {
+                MixSeat();
+            }
             PrintOnScreen();
         }
 
