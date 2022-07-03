@@ -26,6 +26,8 @@ namespace SeatArr
         private int StudentsNumber;
         private bool isMaskVisible;
 
+        private static Random rng = new Random();
+
         public bool IsMaskVisible { get => isMaskVisible;
             
             set 
@@ -183,7 +185,14 @@ namespace SeatArr
 
         private void MixSeat()
         {
-            ClassMates = ClassMates.OrderBy(a => Guid.NewGuid()).ToList();
+            // ClassMates = ClassMates.OrderBy(a => Guid.NewGuid()).ToList();
+            for (int i = ClassMates.Count - 1; i >= 0; i--)
+            {
+                int j = rng.Next(i+1);
+                var temp = ClassMates[j];
+                ClassMates[j] = ClassMates[i];
+                ClassMates[i] = temp;
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
