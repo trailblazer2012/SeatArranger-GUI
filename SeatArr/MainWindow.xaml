@@ -10,14 +10,16 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="확인" Grid.Column="1" FontSize="20" Grid.Row="0" Grid.RowSpan="2" Click="Button_Click"/>
+        <Button Content="확인" Grid.Column="1" FontSize="20" Grid.Row="0" Grid.RowSpan="3" Click="Button_Click"/>
         <TextBox FontSize="20" Name="ClassInput" Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" KeyDown="TextBox_KeyDown"/>
         <CheckBox x:Name="CheckBox_CustomStudent"  Grid.Column="0" Grid.Row="1" FontSize="20" Content="이름/번호 지정하기" VerticalAlignment="Center"/>
+        <CheckBox x:Name="DisArrangement"  Grid.Column="0" Grid.Row="2" FontSize="20" Content="교란순열" VerticalAlignment="Center"/>
     </Grid>
 </Window>

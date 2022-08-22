@@ -57,13 +57,13 @@ namespace SeatArr
                         return;
                     }
                     this.Hide();
-                    ArrSeat arrSeat = new ArrSeat(ClassInput.Text, custom_class);
+                    ArrSeat arrSeat = new ArrSeat(ClassInput.Text, custom_class, DisArrangement.IsChecked ?? false);
                     arrSeat.ShowDialog();
                 }
                 else
                 {
                     this.Hide();
-                    ArrSeat arrSeat = new ArrSeat(ClassInput.Text);
+                    ArrSeat arrSeat = new ArrSeat(ClassInput.Text, DisArrangement.IsChecked ?? false);
                     arrSeat.ShowDialog();
                 }
             }
